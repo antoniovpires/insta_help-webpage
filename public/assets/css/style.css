@@ -299,7 +299,7 @@ header.scrolled .menu-header a:hover {
 
 .contact-form {
   width: 50%;
-  margin-left: 15%;
+  margin-left: 10%;
   border-radius: 8px 0px;
   font-weight: 600;
   padding: 20px;
@@ -389,7 +389,7 @@ footer {
 }
 
 .footer-content {
-  width: 70%;
+  width: 85%;
   margin: auto;
   display: grid;
   grid: auto / 40% auto;
@@ -493,4 +493,19 @@ header.scrolled .menu-register:hover{
 .clientes-div div img{
   width: 100%;
   filter: grayscale(); 
+}
+
+.login-barra {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.login-barra p {
+  margin-bottom: 0;
+}
+
+.login-barra p:hover {
+text-decoration: underline;
+  cursor: pointer;
 }

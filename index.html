@@ -17,6 +17,8 @@
   <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="slick/slick.min.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </head>
 
@@ -31,13 +33,13 @@
       <a href="#main-index">Início</a>
       <a href="#about-us">Sobre nós</a>
       <a href="#practical-areas">Áreas de atuação</a>
-      <a href="#contact-us">Contato</a>
+      <a href="#footer_contact">Contato</a>
       <a class="menu-register" href="#contact-us">Trabalhe Conosco</a>
     </div>
-    <div class="img-and-text">
-      <ion-icon name="call-outline"></ion-icon>
-      <p>+55 (48) 9-9994-0355</p>
-      <small>Agende uma conversa</small>
+    <div class="login-barra">
+      <p>Login</p>
+      /
+      <p>Registrar-se</p>
     </div>
   </header>
   <main>
@@ -94,7 +96,7 @@
         <img src="https://t3.ftcdn.net/jpg/01/11/52/86/360_F_111528670_LmoAXCo33Hy7sYg1UdOQ4zmoxmiMFgVR.jpg" alt="">
       </div>
     </section>
-    <section id="about-us" class="photo-text-section">
+    <section id="about-us" class="photo-text-section" data-aos="fade-right"  data-aos-easing="linear" data-aos-duration="700">
       <!-- <a class="btn">Conheça a Equipe</a> -->
       <div class="photo-text">
         <img src="public/images/pexels-canva-studio-3153201.jpg" alt="">
@@ -113,7 +115,7 @@
         <div><a href="#contact-us">Agende seu treinamento agora!</a></div>
       </div>
     </section>
-    <section id="practical-areas" class="photo-text-section">
+    <section id="practical-areas" class="photo-text-section" data-aos="fade-left"  data-aos-easing="linear" data-aos-duration="700">
       <div class="photo-text">
         <div>
           <h2>Oferecemos soluções em</h2>
@@ -137,26 +139,42 @@
       </div>
     </section>
     <section id="contact-us">
-      <div class="contact-form col-md-4">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Nome</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Digite aqui o seu nome">
+      <div class="row">
+        <div class="contact-form col-md-4">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nome</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Digite aqui o seu nome">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Digite aqui o seu email">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Digite aqui a sua mensagem" style="resize: none;"></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Anexe seu currículo</label>
+            <input class="form-control"  type="file" />
+          </div>
+          <div class="mb-3">
+            <button class="btn">Enviar</button>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Email</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Digite aqui o seu email">
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Digite aqui a sua mensagem" style="resize: none;"></textarea>
-        </div>
-        <div class="mb-3">
-          <button class="btn">Enviar</button>
+        <div class="contact-form col-md-4">
+          <h4>Trabalhe conosco</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, optio, fugit incidunt corrupti enim ipsam consectetur excepturi saepe exercitationem obcaecati asperiores. Provident mollitia consequatur nam. Omnis totam porro eligendi maxime!</p>
+          <ul>
+            <li>Equipe Comercial</li>
+            <li>Consultor</li>
+            <li>Palestrante</li>
+            <li>Programador</li>
+          </ul>
         </div>
       </div>
     </section>
   </main>
-  <footer>
+  <footer id="footer_contact">
     <div class="footer-content">
       <div class="contact-text">
         <h1>Contato</h1>
@@ -169,8 +187,8 @@
         </div>
       </div>
       <div class="contact-card-div">
-        <div class="card text-bg-light mb-3" style="width: 25rem;">
-          <div class="card-header text-light">Contato</div>
+        <div class="card text-bg-light mb-3" style="width: 60vw">
+          <div class="card-header text-light">Informações</div>
           <div class="card-body">
             <h5 class="card-title">Telefone</h5>
             <p class="card-text">+55 (48) 9-9999-9999</p>
@@ -191,6 +209,7 @@
 </body>
 <script>
   const header = document.querySelector('header');
+  AOS.init();
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
@@ -214,7 +233,7 @@
 
  // Função para atualizar a palavra com efeito suave
  function atualizarPalavraSuave() {
-      var palavras = ["pessoas", "empresas", "cidades"]; // Lista de palavras
+      var palavras = ["entidades", "empresas", "cidades"]; // Lista de palavras
       var elemento = document.getElementById("palavra-suave"); // Elemento <span> que exibirá a palavra
       var indice = 0; // Índice inicial
       
