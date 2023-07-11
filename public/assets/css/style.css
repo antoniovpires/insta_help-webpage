@@ -68,6 +68,17 @@ header.scrolled .menu-header a:hover {
   border-bottom: 5px solid var(--main-color);
 }
 
+
+
+.img-and-text-logo {
+  display: grid;
+  padding: 10px;
+  grid-template:
+    "img text";
+  align-items: center;
+  gap: 10px;
+}
+
 .img-and-text {
   display: grid;
   padding: 10px;
@@ -76,13 +87,15 @@ header.scrolled .menu-header a:hover {
     "img subtext";
 }
 
+.img-and-text-logo ion-icon,
 .img-and-text ion-icon {
   grid-area: img;
   padding: 5px;
   font-size: 3em;
 }
 
-.img-and-text p {
+.img-and-text p,
+.img-and-text-logo p {
   grid-area: text;
   display: flex;
   align-items: center;
