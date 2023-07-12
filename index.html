@@ -23,6 +23,15 @@
 </head>
 
 <body>
+  <aside id="aside-bar" class="">
+      <button onclick="showAside()"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+      <div>
+        <a href="#about-us">Sobre nós</a>
+        <a href="#practical-areas">Áreas de atuação</a>
+        <a href="#footer_contact">Contato</a>
+        <a href="#contact-us">Trabalhe Conosco</a>
+      </div>
+  </aside>
   <header>
     <div class="img-and-text-logo">
       <ion-icon name="people-circle-outline"></ion-icon>
@@ -31,6 +40,7 @@
         <small>Apaixonados por Pessoas</small>
       </div>
     </div>
+    <button id="header-menu-button"><ion-icon name="menu-outline"></ion-icon></button>
     <div class="menu-header">
       <a href="#main-index">Início</a>
       <a href="#about-us">Sobre nós</a>
@@ -88,7 +98,7 @@
       </div>
       
     </section>
-    <section id="about-us" class="clientes-div">
+    <section class="clientes-div">
       <!-- <a class="btn">Conheça a Equipe</a> -->
       <h5>Junte-se a mais de 1000 clientes</h5>
       <div>
@@ -189,7 +199,7 @@
         </div>
       </div>
       <div class="contact-card-div">
-        <div class="card text-bg-light mb-3" style="width: 60vw">
+        <div class="card text-bg-light mb-3">
           <div class="card-header text-light">Informações</div>
           <div class="card-body">
             <h5 class="card-title">Telefone</h5>
@@ -212,6 +222,18 @@
 <script>
   const header = document.querySelector('header');
   AOS.init();
+
+  function showAside() {
+    let asideBar = document.getElementById("aside-bar")
+
+    if (!asideBar.classList.contains("escondido")) {
+      asideBar.classList.add("escondido")
+    } else {
+      asideBar.classList.remove("escondido")
+    }
+  }
+
+  document.getElementById("header-menu-button").addEventListener("click", showAside)
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
